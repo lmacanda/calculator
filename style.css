@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+:root {
+  --fontFamily: "Manrope", sans-serif;
+  --primaryColor: #1e7fbb;
+  --primaryDarkColor: #166ea0;
+  --primaryLightColor: rgba(33, 119, 172, 0.9);
+  --secondaryColor: #b6b8e6;
+  --secondaryDarkColor: #8082be;
+  --calcDisplayBorderColor: rgba(255, 255, 255, 0.3);
+  --btnResultColor: #ee8874;
+  --btnResultHoverColor: #ff6160;
+  --colorWhite: #ffffff;
+  --mediumFontSize: 1rem;
+  --extraLargerFontSize: 3rem;
+}
+
+body {
+  font-family: var(--fontFamily);
+}
+
+.calculator {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(120px, auto) repeat(5, 1fr);
+  background-image: linear-gradient(
+    90deg,
+    var(--primaryColor),
+    var(--primaryDarkColor)
+  );
+  width: 300px;
+  max-width: 400px;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 0.5%;
+  gap: 1% 1%;
+}
+
+.calculator-display {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-family: var(--fontFamily);
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--extraLargerFontSize);
+  color: var(--colorWhite);
+  border-radius: 10px;
+  border: 1px solid var(--calcDisplayBorderColor);
+  background-image: linear-gradient(
+    90deg,
+    var(--primaryColor),
+    var(--primaryDarkColor)
+  );
+}
+
+
+.calculator > button {
+  border-radius: 10px;
+  background-color: var(--secondaryColor);
+  font-family: var(--fontFamily);
+  font-style: normal;
+  font-weight: 700;
+  font-size: var(--mediumFontSize);
+  line-height: 25px;
+  text-align: center;
+  color: var(--colorWhite);
+}
+
+.calculator > button:hover,
+.calculator > button:focus {
+  background-color: var(--secondaryDarkColor);
+}
+
+.btn-result {
+  grid-column: span 2;
+  background-color: var(--btnResultColor) !important;
+}
+
+.btn-result:hover,
+.btn-result:focus {
+  background-color:var(--btnResultHoverColor) !important;
+}
